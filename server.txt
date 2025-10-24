@@ -1,0 +1,7 @@
+xampp-windows-x64-7.4.33-0-VC15
+Apache/2.4.54
+PHP: 7.4.33
+MariaDB-10.4.27
+VUE 2
+VUEX 3
+VUETIFY 2

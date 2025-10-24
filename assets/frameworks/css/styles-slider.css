@@ -1,0 +1,172 @@
+	/* @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600&display=swap"); */
+
+	:root {
+		--first-color: hsl(38, 92%, 58%);
+		--first-color-light: hsl(38, 100%, 78%);
+		/* --first-color-alt: hsl(32, 75%, 50%); */
+		--second-color: hsl(197, 13%, 11%);
+		--dark-color: hsl(212, 40%, 12%);
+		/* --white-color: hsl(212, 4%, 95%); */
+		--white-color: hsl(0, 0%, 100%);
+		--gray-color: hsl(240, 2%, 41%);
+		--body-color: hsl(212, 42%, 15%);
+		/* --container-color: hsl(212, 42%, 20%); */
+		--container-color: #9b162e;
+		/* --body-font: "Bai Jamjuree", sans-serif; */
+		/* --h2-font-size: 1.25rem; */
+		--h2-font-size: 1.1rem;
+		--normal-font-size: 1rem;
+	}
+
+	.card__container {
+		padding-block: 5px 2rem !important;
+		writing-mode: horizontal-tb;
+	}
+	.card__content {
+		/* padding: 10px; */
+		padding: 0.6rem!important;
+		margin-inline: 1.75rem!important;
+		border-radius: 1.25rem!important;
+		overflow: hidden!important;
+	}
+	.card__article {
+		width: 300px; 
+		border-radius: 1.25rem;
+		overflow: hidden;
+	}
+	.card__image {
+		position: relative;
+		background-color: var(--first-color-light);
+		/* padding-top: 0.5rem; */
+		margin-bottom: -1rem; 
+		padding-left: 0px !important;
+	}
+	.image-container {
+		width: 100%;
+		height: 250px; 
+		overflow: hidden;
+	}
+	.image-container img {
+		width: 100%;
+		height: 100%;
+		background-color:dimgrey;
+		object-fit: contain;
+	}
+	/* .card__img {
+		width: 180px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 5;
+	} */
+	.card__data {
+		height: 230px;
+		/* background-color: var(--container-color); */
+		background-color: #c1b896;
+		/* padding: 1.5rem 2rem; */
+		padding: 1rem 1.2rem;
+		border-radius: 1rem;
+		text-align: center;
+		position: relative;
+		z-index: 10;
+	}
+
+	.card__shadow {
+		width: 200px;
+		height: 200px;
+		background-color: var(--first-color-alt);
+		border-radius: 50%;
+		position: absolute;
+		top: 3.75rem;
+		left: 0;
+		right: 0;
+		margin-inline: auto;
+		filter: blur(45px);
+	}
+	.card__title {
+		height: 85px;
+		font-size: var(--h2-font-size);
+		color:var(--container-color);
+		margin-bottom: .75rem;
+		/* border-bottom: solid; */
+	}
+	.card__description {
+		height: 65px;
+		color: var(--white-color);
+		font-weight: 500;
+		margin-bottom: 1.2rem;
+		/* margin-bottom: 1.75rem; */
+		/* border-bottom: solid; */
+	}
+	/* a {
+		text-decoration: none !important;
+	} */
+	.card__button {
+		display: inline-block;
+		background-color: var(--first-color);
+		padding: .75rem 1.5rem;
+		border-radius: .25rem;
+		color: var(--dark-color);
+		font-weight: 600;
+	}
+
+	.swiper-slide:hover {
+		-webkit-transform:scale(0.5);
+		transform:scale(1.04);
+		transition: .3s;
+		/* cursor: pointer; */
+	}
+
+	.swiper-button-prev:after,
+	.swiper-button-next:after {
+		content: "" !important;
+	}
+	.swiper-button-prev,
+	.swiper-button-next {
+		width: initial !important;
+		height: initial !important;
+		font-size: 3rem !important;
+		color: var(--second-color) !important;
+		display: none !important;
+	}
+	.swiper-button-prev {
+		left: 0 !important;
+	}
+	.swiper-button-next {
+		right: 0 !important;
+	}
+	.swiper-pagination-bullet {
+		background-color: hsl(212, 32%, 40%) !important;
+		opacity: 1 !important;
+	}
+	.swiper-pagination-bullet-active {
+		background-color: var(--second-color) !important;
+	}
+	@media screen and (max-width: 320px) {
+		.card__data {
+			padding: 1rem !important;
+		}
+	}
+	@media screen and (min-width: 768px) {
+		.card__content {
+			margin-inline: 3rem !important;
+			/* padding: 10rem!important; */
+		}
+
+		.swiper-button-next,
+		.swiper-button-prev {
+			display: block !important;
+		}
+	}
+	@media screen and (min-width: 1200px) {
+		.card__container {
+			/* max-width: 1120px !important; */
+			max-width: 1200px !important;
+		}
+		/* .swiper-button-prev {
+			left: -1rem !important;
+		}
+		.swiper-button-next {
+			right: -1rem !important;
+		} */
+	} 
+

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SIEPI PUEBLA MAP</title>
+   <link rel="shortcut icon" href="./assets/img/logos/baston.jpg" />
+   <meta name="description"
+      content="Sistema de Información y Estadística sobre los Pueblos y Comunidades Indígenas del Estado de Puebla">
+   <link rel="stylesheet" href="./assets/frameworks/bootstrap/bootstrap-4.0.0/package/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="./assets/frameworks/css/style_maps.css">
+   <link href="./assets/frameworks/vuetify/font-6.9.96/package/css/materialdesignicons.min.css" rel="stylesheet">
+   <link href="./assets/frameworks/vuetify/vuetify-2.6.12/package/dist/vuetify.min.css" rel="stylesheet">
+   <script src="./assets/frameworks/vue/vue-2.7.12/package/dist/vue.js"></script>
+   <script src="./assets/frameworks/axios/axios.min.js"></script>
+   <style>
+      /* body { filter: grayscale(100%); } */
+   </style>
+</head>
+
+<body>
+   <div id="App">
+      <v-app id="inspire">
+         <template>
+            <v-app-bar app dark elevation="10" color="#9b162e" hide-on-scroll clipped-left src="./assets/img/logos/CINTA.png">
+               <v-app-bar-nav-icon @click.stop="drawer=!drawer"></v-app-bar-nav-icon>
+               <!-- <img src="./assets/img/logos/LOGO_PUEBLA.png" class="responsive img-fluid" style=" max-width: 150px;"> -->
+               <v-spacer></v-spacer>
+               <img src="./assets/img/logos/siepi_blanco.png" style=" margin-top: 2px; margin-bottom: 5px; margin-right: 25px; width: 100%; max-width: 200px; height: auto;">
+            </v-app-bar>
+         </template>
+         <template>
+            <v-navigation-drawer app dark v-model="drawer" width="250px" clipped style="padding-top: 10px;">
+               <v-list nav dense>
+                  <template v-for="(item, index) in Indicators">
+                     <v-list-item link v-if="item.team==='0'" :key="item.id" :title="item.title" @click="SltIndocator(item)">
+                        <v-list-item-icon class="icon_list">
+                           <img :src="item.icon" class="iconue">
+                        </v-list-item-icon>
+                        <v-list-item-title>{{item.title}}</v-list-item-title>
+                     </v-list-item>
+                     <v-list-group :value="false" v-if="item.team==='1'" :title="item.title">
+                        <template v-slot:activator>
+                           <v-list-item-icon class="icon_list">
+                              <img :src="item.icon" class="iconue">
+                           </v-list-item-icon>
+                           <v-list-item-title>{{item.title}}</v-list-item-title>
+                        </template>
+                        <v-list-item v-for="(sub_module, i) in item.sub_modules" :key="i" link :title="sub_module.title" style="padding-left: 2.5rem;">
+                           <template>
+                              <v-list-item-icon class="icon_list">
+                                 <img :src="sub_module.icon" class="iconue">
+                              </v-list-item-icon>
+                              <v-list-item-title @click="SltIndocator(sub_module)">{{sub_module.title}}
+                              </v-list-item-title>
+                           </template>
+                        </v-list-item>
+                     </v-list-group>
+                  </template>
+               </v-list>
+               <br><br>
+            </v-navigation-drawer>
+         </template>
+         <v-main>
+            <v-card id="viewDiv"></v-card>
+            <template>
+               <div id="InfoMap" class="esri-widget" style="display: none;">
+                  <template v-if="TownHall.Title !=''">
+                     <v-card class="container_title_indicators" elevation="10">
+                        <div class="title_indicators">{{TownHall.Title}} </div>
+                     </v-card>
+                     <v-row style="margin-bottom: 0.2em;">
+                        <v-col cols="12" md="6">
+                           <v-btn color="#616161" class="white--text" elevation="5" x-small block @click="Dialog_Cita.Actived=true" title="Consultar fuente de información">
+                              Fuente de información
+                              <v-icon small right dark>mdi-open-in-new</v-icon>
+                           </v-btn>
+                        </v-col>
+                        <v-col cols="12" md="6">
+                           <v-btn color="green" class=" white--text" elevation="5" x-small block @click="Files()" title="Descargar la información en excel">
+                              Descargar Excel
+                              <v-icon small right dark>mdi-download</v-icon>
+                           </v-btn>
+                        </v-col>
+                     </v-row>
+                     <v-divider class="pa-0 ma-0"></v-divider>
+                     <v-text-field v-if="TownHall.Items.length" v-model="TownHall.Search" type="text" label="Buscar municipio:" append-icon="mdi-magnify" hide-details></v-text-field><br>
+                  </template><template v-if="TownHall.Items.length">
+                     <div class="TownHalls">
+                        <v-list style="background-color: transparent;" align="left" nav dense>
+                           <v-list-item-group color="primary">
+                              <v-list-item v-for="(item, i) in FilterData" :key="item.Id" @click="GetData_TownHall(item.Id)" color="#9B162E" style="padding: 0 !important;">
+                                 <v-list-item-content style="border-bottom: 1px solid #a1a1a1;">
+                                    <v-list-item-title v-text="item.Desc_"></v-list-item-title>
+                                 </v-list-item-content>
+                              </v-list-item>
+                           </v-list-item-group>
+                        </v-list>
+                     </div>
+                  </template>
+               </div>
+            </template>
+         </v-main>
+         <template>
+               <v-dialog v-model="Dialog_data.actived" scrollable max-width="750px" persistent>
+                  <v-card max-height="85vh">
+                     <v-toolbar dark class="toolbar title-dialog" color="#424242">
+                        Municipio: <strong style="padding-left: 5px;">{{Dialog_data.title}}</strong>
+                        <v-spacer></v-spacer>
+                        <v-btn @click="Dialog_data.actived=false, Panel=false" color="error" small fab>
+                           <v-icon>mdi-close</v-icon>
+                        </v-btn>
+                     </v-toolbar>
+                     <v-card-text>
+                        <br>
+                        <h2 class="title-indicator">{{Dialog_data.indicator}}</h2>
+                        <v-divider></v-divider>
+                        <template v-if="Dialog_data.table_01">
+                           <v-data-table :headers="Dialog_data.table_01.headers":items="Dialog_data.table_01.items" :hide-default-header="Dialog_data.table_01.header" hide-default-footer class="table-map elevation-2" dense :mobile-breakpoint="0">
+                              <template v-slot:item="{ item}">
+                                 <tr>
+                                    <td v-for="(header, index) in Dialog_data.table_01.headers" :key="index" :class="setClass(header.value, Dialog_data.table_01.columns_style)">
+                                       {{item[header.value]}} 
+                                    </td>
+                                 </tr>
+                              </template>
+                           </v-data-table>
+                        </template>
+                        <template>
+                           <br>
+                           <v-expansion-panels v-model="Panel">
+                              <v-expansion-panel v-for="(element, index) in Dialog_data.panels" :key="index">
+                                 <v-expansion-panel-header>
+                                    <strong>{{element.panel_header}}</strong>
+                                 </v-expansion-panel-header>
+                                 <v-expansion-panel-content>
+                                    <h6 v-if="element.label" class="title_panel">{{element.label}} <br><br></h6>
+                                    <template v-if="element.table">
+                                       <v-data-table :headers="element.table.headers" :items="element.table.items" :hide-default-header="element.table.header" :items-per-page="-1" hide-default-footer class="table-map elevation-2" dense :mobile-breakpoint="0">
+                                          <template v-slot:item="{ item}">
+                                             <tr>
+                                                <td v-for="(header, index) in element.table.headers" :key="index" :class="setClass(header.value, element.table.columns_style)">
+                                                   {{ item[header.value] }} 
+                                                </td>
+                                             </tr>
+                                          </template>
+                                       </v-data-table>
+                                    </template>
+                                    <template v-if="element.chart.attributes">
+                                       <v-divider></v-divider>
+                                       <h6 class="title_panel">{{element.label_chart}}</h6>
+                                       <vue-chart :type="element.chart.name" :data="element.chart.attributes"></vue-chart>
+                                    </template>
+                                 </v-expansion-panel-content>
+                              </v-expansion-panel>
+                           </v-expansion-panels>
+                        </template>
+                     </v-card-text>
+                  </v-card>
+               </v-dialog>
+
+               <v-dialog v-model="Dialog_Lenguage.Actived" scrollable max-width="750px" persistent>
+                  <v-card>
+                     <v-toolbar dark class="text-h5" color="#424242">
+                        <h5 v-if="Dialog_Lenguage.Content.Region">
+                           Región: <strong style="padding-left: 5px;">{{Dialog_Lenguage.Content.Region}}</strong>
+                        </h5>
+                        <h5 v-if="Dialog_Lenguage.Content.Municipio">
+                           Municipio: <strong style="padding-left: 5px;">{{Dialog_Lenguage.Content.Municipio}}</strong>
+                        </h5>
+                        <h5 v-if="Dialog_Lenguage.Content.nombre">
+                           Municipio: <strong style="padding-left: 5px;">{{Dialog_Lenguage.Content.nombre}}</strong>
+                        </h5>
+                        <v-spacer></v-spacer>
+                        <v-btn @click="Dialog_Lenguage.Actived=false, Panel=false" color="error" small fab>
+                           <v-icon>mdi-close</v-icon>
+                        </v-btn>
+                     </v-toolbar>
+                     <v-card-text>
+                        <br>
+                        <h2 style="text-align:center;" v-if="Dialog_Lenguage.Content.nombre">LENGUA</h2>
+                        <h2 style="text-align:center;" v-else>LENGUAS</h2>
+                        <v-divider></v-divider>
+                        <div style="color: #000000DE; padding-left: 25px;">
+                           <template v-if="Dialog_Lenguage.Content.Lenguas">
+                              <v-simple-table dense>
+                                 <template v-slot:default>
+                                    <thead>
+                                       <tr>
+                                          <th class="text-left">#</th>
+                                          <th class="text-left">LENGUA</th>
+                                          <th class="text-left">NO. HABLANTES</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr v-for="Data, index in Dialog_Lenguage.Content.Lenguas" :key="index">
+                                          <td>{{index + 1}}</td>
+                                          <td>{{Data.nombre}}</td>
+                                          <td style="width:25%;">{{parseInt(Data.total).toLocaleString()}}</td>
+                                       </tr>
+                                    </tbody>
+                                 </template>
+                              </v-simple-table>
+                           </template>
+                           <template v-else>
+                              <h3> {{Dialog_Lenguage.Content.Lengua}}:{{parseInt(Dialog_Lenguage.Content.nhablantes).toLocaleString()}} hablantes</h3>
+                           </template>
+                        </div>
+                        <v-divider></v-divider>
+                     </v-card-text>
+                  </v-card>
+               </v-dialog>
+               <v-dialog v-model="Dialog_Cita.Actived" scrollable max-width="700px" persistent>
+                  <v-card>
+                     <v-toolbar color="#424242" dark class="text-h5">
+                        <strong style="padding-left: 5px;">{{Dialog_Cita.Tittle}}</strong>
+                        <v-spacer></v-spacer>
+                        <v-btn @click="Dialog_Cita.Actived=false" color="error" small fab>
+                           <v-icon>mdi-close</v-icon>
+                        </v-btn>
+                     </v-toolbar>
+                     <v-card-text>
+                        <br>
+                        <template v-if="Citas.Items.length" v-for="(item, index) in Citas.Items">
+                           <h6 class="title_panel">
+                              {{item.Desc_}} 
+                              <a :href="item.Link" target="_blank">{{item.Link}} </a>
+                           </h6>
+                           <v-divider></v-divider>
+                        </template>
+                        <div v-if="Citas.Img" style="text-align: center;">
+                           <img :src="Citas.Img" alt="" width="90%">
+                        </div>
+                     </v-card-text>
+                  </v-card>
+               </v-dialog>
+
+               <v-dialog v-model="Dialog_Alert" scrollable max-width="500px" persistent>
+                  <v-card color="#9b162e">
+                     <br>
+                     <v-alert :value="Dialog_Alert" prominent type="info" color="#9b162e" icon="mdi-cloud-download">Descargando... </v-alert>
+                  </v-card>
+               </v-dialog>
+               
+               <v-dialog v-model="Dialog_Loader" scrollable persistent width="300">
+                  <v-card color="#9b162e" dark>
+                     <v-card-text class="centered">
+                        Por favor espere 
+                        <v-progress-linear indeterminate color="white" class="mb-0"></v-progress-linear>
+                     </v-card-text>
+                  </v-card>
+               </v-dialog>
+         </template>
+      </v-app>
+   </div>
+</body>
+
+</html>
+<script src="./assets/frameworks/vuetify/vuetify-2.6.12/package/dist/vuetify.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+<script src="https://unpkg.com/vue-chart-js"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css" />
+<script src="https://js.arcgis.com/4.23/"></script>
+<!-- <script type="text/javascript" src="./assets/js/map.vue.min.js"></script>
+<script type="text/javascript" src="./assets/js/map.arcgis.min.js"></script> -->
+<script type="text/javascript" src="./assets/js/map.vue.js"></script>
+<script type="text/javascript" src="./assets/js/map.arcgis.js"></script>

@@ -1,0 +1,126 @@
+[
+   {
+      "tab": "Español", 
+      "content": "español",
+      "img_info": "./multimedia/img/infografia/card_esp.png",
+      "img_sin": "./multimedia/img/infografia/sintesis_esp.jpg", 
+      "iframe": null,
+      "pdf_info": "./multimedia/pdf/consejos_regionales/infografias/esp.pdf",
+      "pdf_sin": "./multimedia/pdf/consejos_regionales/sintesis/esp.pdf",
+      "video": "./multimedia/video/consejos_regionales/esp.mp4",
+      "audios":[
+         { "name":"Colsulta Indígena", "src":"./multimedia/audio/consejos_regionales/consulta_esp.mp3" },
+         { "name":"Consejos Regionales", "src":"./multimedia/audio/consejos_regionales/consejos_esp.mp3" }
+      ]
+   },
+   { 
+      "tab": "Náhua Norte",
+      "content": "Náhua Norte", 
+      "img_info": "./multimedia/img/infografia/card_nahuatl_norte.png", 
+      "img_sin": "./multimedia/img/infografia/card_sin_nahuatl_norte.png", 
+      "iframe": "https://www.youtube.com/embed/jIHH0QigfCo",
+      "pdf_info": "./multimedia/pdf/consejos_regionales/infografias/nahua_norte.pdf", 
+      "pdf_sin": "./multimedia/pdf/consejos_regionales/sintesis/nahua_norte.pdf",
+      "video": null,
+      "audios":[
+         { "name":"Colsulta Indígena", "src":"./multimedia/audio/consejos_regionales/consulta_nahua_norte.mp3" },
+         { "name":"Consejos Regionales", "src":"./multimedia/audio/consejos_regionales/consejos_nahua_norte.mp3" } 
+      ]
+   },
+   { 
+      "tab": "Totonaco Norte",
+      "content": "Totonaco Norte", 
+      "img_info": "./multimedia/img/infografia/card_totonaco_norte.png", 
+      "img_sin": "./multimedia/img/infografia/card_sin_totonaco_norte.png", 
+      "iframe": "https://www.youtube.com/embed/c4c6fpQUmE0",
+      "pdf_info": "./multimedia/pdf/consejos_regionales/infografias/totonaco_norte.pdf", 
+      "pdf_sin": "./multimedia/pdf/consejos_regionales/sintesis/totonaco_norte.pdf",
+      "video": null,
+      "audios":[
+         { "name":"Colsulta Indígena", "src":"./multimedia/audio/consejos_regionales/consulta_totonaco_norte.mp3" },
+         { "name":"Consejos Regionales", "src":"./multimedia/audio/consejos_regionales/consejos_totonaco_norte.mp3" }
+      ]
+   },
+   { 
+      "tab": "Mazateco",
+      "content": "Mazateco", 
+      "img_info": "./multimedia/img/infografia/card_mazateco.png", 
+      "img_sin": "./multimedia/img/infografia/card_sin_mazateco.png", 
+      "iframe": null,
+      "pdf_info": "./multimedia/pdf/consejos_regionales/infografias/mazateco.pdf",
+      "pdf_sin": "./multimedia/pdf/consejos_regionales/sintesis/mazateco.pdf",
+      "video": "./multimedia/video/consejos_regionales/mazateco.mp4",
+      "audios":[
+         { "name":"Colsulta Indígena", "src":"./multimedia/audio/consejos_regionales/consulta_mazateco.mp3" },
+         { "name":"Consejos Regionales", "src":"./multimedia/audio/consejos_regionales/consejos_mazateco.mp3" }
+      ]
+   },
+   { 
+      "tab": "Ngigua",
+      "content": "Ngigua", 
+      "img_info": "./multimedia/img/infografia/card_ngigua.png", 
+      "img_sin": "./multimedia/img/infografia/card_sin_ngigua.png", 
+      "iframe": "https://www.youtube.com/embed/q-vihJloIJ0", 
+      "pdf_info": "./multimedia/pdf/consejos_regionales/infografias/ngigua.pdf", 
+      "pdf_sin": "./multimedia/pdf/consejos_regionales/sintesis/ngigua.pdf",
+      "video": null,
+      "audios":[
+         { "name":"Colsulta Indígena", "src":"./multimedia/audio/consejos_regionales/consulta_ngigua.mp3" },
+         { "name":"Consejos Regionales", "src":"./multimedia/audio/consejos_regionales/consejos_ngigua.mp3" }
+      ]
+   },
+   { 
+      "tab": "Ngiva",
+      "content": "Ngiva", 
+      "img_info": "./multimedia/img/infografia/card_ngiva.png", 
+      "img_sin": "./multimedia/img/infografia/card_sin_ngiva.png", 
+      "iframe": "https://www.youtube.com/embed/lilNqkYRAxU",
+      "pdf_info": "./multimedia/pdf/consejos_regionales/infografias/ngiva.pdf", 
+      "pdf_sin": "./multimedia/pdf/consejos_regionales/sintesis/ngiva.pdf",
+      "video": null,
+      "audios":[
+         { "name":"Consejos Regionales", "src":"./multimedia/audio/consejos_regionales/consejos_ngiva.mp3" }
+      ]
+   },
+   { 
+      "tab": "Otomí",
+      "content": "Otomí", 
+      "img_info": "./multimedia/img/infografia/card_otomi.png", 
+      "img_sin": "./multimedia/img/infografia/sintesis_otomi.jpg", 
+      "iframe": null,
+      "pdf_info": "./multimedia/pdf/consejos_regionales/infografias/otomi.pdf", 
+      "pdf_sin": "./multimedia/pdf/consejos_regionales/sintesis/otomi.pdf",
+      "video": "./multimedia/video/consejos_regionales/otomi.mp4",
+      "audios":[
+         { "name":"Colsulta Indígena", "src":"./multimedia/audio/consejos_regionales/consulta_otomi.mp3" }
+            ]
+   },
+   { 
+      "tab": "Mixteco",
+      "content": "Mixteco", 
+      "img_info": "./multimedia/img/infografia/card_mixteco.png", 
+      "img_sin": "./multimedia/img/infografia/card_sin_mixteco.png", 
+      "iframe": "https://www.youtube.com/embed/AkhqXhR2WIo",
+      "pdf_info": "./multimedia/pdf/consejos_regionales/infografias/mixteco.pdf", 
+      "pdf_sin": "./multimedia/pdf/consejos_regionales/sintesis/mixteco.pdf",
+      "video": null,
+      "audios":[
+         { "name":"Colsulta Indígena", "src":"./multimedia/audio/consejos_regionales/consulta_mixteco.mp3" },
+         { "name":"Consejos Regionales", "src":"./multimedia/audio/consejos_regionales/consejos_mixteco.mp3" }
+      ]
+   },
+   { 
+      "tab": "Tepehua",
+      "content": "Tepehua", 
+      "img_info": "./multimedia/img/infografia/card_tepehua.png", 
+      "img_sin": "./multimedia/img/infografia/card_sin_tepehua.png", 
+      "iframe": "https://www.youtube.com/embed/nxy1sS_gv2U",
+      "pdf_info": "./multimedia/pdf/consejos_regionales/infografias/tepehua.pdf", 
+      "pdf_sin": "./multimedia/pdf/consejos_regionales/sintesis/tepehua.pdf",
+      "video": null,
+      "audios":[
+         { "name":"Colsulta Indígena", "src":"./multimedia/audio/consejos_regionales/consulta_tepehua.mp3" },
+         { "name":"Consejos Regionales", "src":"./multimedia/audio/consejos_regionales/consejos_tepehua.mp3" }
+      ]
+   }
+]

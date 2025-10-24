@@ -1,0 +1,32 @@
+[
+	{
+		"img": "./multimedia/img/sliders/banner_libro_01.png", 
+		"pdf":"./multimedia/pdf/libros/1_manual_para_realizar_talleres_comunitarios_con_población_indígena_y_afromexicana_Hacia_la_Igualdad_Sustantiva.pdf", 
+		"title": "Manual para realizar talleres comunitarios con población indígena y afromexicana: Hacia la Igualdad Sustantiva", 
+		"desc":"En el Instituto Poblano de los Pueblos Indígenas reconocemos la importancia y necesidad de visibilizar y atender las problemáticas que enfrentan cotidianamente las mujeres en sus diversos quehaceres, por ellos hemos creado este manual que brinda herramientas a las y los talleristas para dialogar y reflexionar con hombres y mujeres. "
+	},
+	{
+		"img": "./multimedia/img/sliders/banner_libro_02.png", 
+		"pdf":"./multimedia/pdf/libros/2_todas_las_niñas_y_los_niños.pdf", 
+		"title": "Todas las niñas y niños", 
+		"desc":"Una divulgación sobre la historia, cultura, derechos, medio ambiente, medicina tradicional y saberes ancestrales a los niños del municipio de Jonotla con la importancia de rescatarlos, preservarlos y trasmitirlos."
+	},
+	{
+		"img": "./multimedia/img/sliders/banner_libro_03.png", 
+		"pdf":"./multimedia/pdf/libros/3_la_transformación_de_la_Sierra_Poblana_22022023.pdf", 
+		"title": "La transformación de la Sierra Poblana a través de los ojos de un maestro liberal", 
+		"desc":"Un pasaje histórico y reconocimiento a la población serrana del estado de Puebla en sus hechos históricos, buscando la justicia y reivindicación de los pueblos de la Sierra Norte, desde la construcción de su identidad en 1821 hasta el choque entre el liberalismo popular decimonónico y la modernidad."
+	},
+	{
+		"img": "./multimedia/img/sliders/banner_libro_04.png", 
+		"pdf":"./multimedia/pdf/libros/4_libro_diagnostico_sobre_salud_culturalmente_pertinente.pdf", 
+		"title": "Diagnóstico sobre salud culturalmente pertinente en el estado de Puebla", 
+		"desc":"Una investigación acerca de los estudios exploratorios descriptivos que permitan conocer sí la prestación de servicios públicos de salud se realiza con pertinencia cultural e identificar la situación cultural en la que se encuentran las unidades médicas pertenecientes a distintas regiones del estado de Puebla."
+	},
+	{
+		"img": "./multimedia/img/sliders/banner_libro_05.png", 
+		"pdf":"./multimedia/pdf/libros/mi_nombre_es_covid.pdf", 
+		"title": "", 
+		"desc":"¡HOLA MI NOMBRE ES CORONAVIRUS! ¡PANOLTI NE NOTOKA CORONAVIRUS! \n\n LIBRO PARA INFANTES"
+	}
+]

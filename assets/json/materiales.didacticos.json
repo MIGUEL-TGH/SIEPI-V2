@@ -1,0 +1,191 @@
+[
+	{
+		"title":"CARTELES", 
+		"images":[
+			{ "desc":"Náhuatl", "src":"./multimedia/img/post_lenguas/nahuatl_ippi.jpg", "type":"img", "pdf":null },
+			{ "desc":"Totonaco", "src":"./multimedia/img/post_lenguas/totonaco_ippi.jpg", "type":"img", "pdf":null },
+			{ "desc":"Mixteco", "src":"./multimedia/img/post_lenguas/mixteco_ippi.jpg", "type":"img", "pdf":null },
+			{ "desc":"Tepehua", "src":"./multimedia/img/post_lenguas/tepehua_ippi.jpg", "type":"img", "pdf":null },
+			{ "desc":"Ngigua", "src":"./multimedia/img/post_lenguas/ngigua_ippi.jpg", "type":"img", "pdf":null },
+			{ "desc":"Mazateco", "src":"./multimedia/img/post_lenguas/mazateco_ippi.jpg", "type":"img", "pdf":null }
+		],
+		"audios":[],
+		"videos":[]
+	},
+	{
+		"title":"VOCABULARIO JURÍDICO", 
+		"images":[
+			{ "desc":"Mixteco", "src":"./multimedia/img/post_vocabulario_juridico/cj_mixteco.jpg", "type":"img", "pdf":null },
+			{ "desc":"Ngigua", "src":"./multimedia/img/post_vocabulario_juridico/cj_ngigua.jpg", "type":"img", "pdf":null },
+			{ "desc":"Mazateco", "src":"./multimedia/img/post_vocabulario_juridico/cj_mazateco.jpg", "type":"img", "pdf":null }
+		],
+		"audios":[],
+		"videos":[]
+	},
+	{
+		"title":"PRONTUARIOS", 
+		"images":[
+			{ "desc":"Náhuatl", "src":"./multimedia/img/post_prontuarios/nahuatl.jpg", "type":"img", "pdf":null },
+			{ "desc":"Totonaco", "src":"./multimedia/img/post_prontuarios/totonaco.jpg", "type":"img", "pdf":null },
+			{ "desc":"Mixteco", "src":"./multimedia/img/post_prontuarios/mixteco.jpg", "type":"img", "pdf":null },
+			{ "desc":"Tepehua", "src":"./multimedia/img/post_prontuarios/tepehua.jpg", "type":"img", "pdf":null },
+			{ "desc":"Otomí", "src":"./multimedia/img/post_prontuarios/otomi.jpg", "type":"img", "pdf":null },
+			{ "desc":"Ngiva", "src":"./multimedia/img/post_prontuarios/ngiva_1.jpg", "type":"img", "pdf":null },
+			{ "desc":"Ngiva", "src":"./multimedia/img/post_prontuarios/ngiva_2.jpg", "type":"img", "pdf":null },
+			{ "desc":"Mazateco", "src":"./multimedia/img/post_prontuarios/mazateco_1.jpg", "type":"img", "pdf":null },
+			{ "desc":"Mazateco", "src":"./multimedia/img/post_prontuarios/mazateco_2.jpg", "type":"img", "pdf":null }
+		],
+		"audios":[
+			{ "desc":"Lengua Náhuatl", "src":"./multimedia/audio/prontuarios/nahuatl.mp3" },
+			{ "desc":"Lengua Totonaca", "src":"./multimedia/audio/prontuarios/totonaco.mp3" },
+			{ "desc":"Lengua Mixteco", "src":"./multimedia/audio/prontuarios/mixteco.mp3" },
+			{ "desc":"Lengua Ngiva", "src":"./multimedia/audio/prontuarios/ngiva.mp3" },
+			{ "desc":"Lengua Mazateco", "src":"./multimedia/audio/prontuarios/mazateco.mp3" }
+		],
+		"videos":[
+			{ "desc":"Náhuatl", "src":"./multimedia/video/prontuarios/nahuatl.mp4" },
+			{ "desc":"Totonaca", "src":"./multimedia/video/prontuarios/totonaco.mp4" },
+			{ "desc":"Mixteco", "src":"./multimedia/video/prontuarios/mixteco.mp4" },
+			{ "desc":"Ngiva", "src":"./multimedia/video/prontuarios/ngiva.mp4" },
+			{ "desc":"Mazateco", "src":"./multimedia/video/prontuarios/mazateco.mp4" }
+		]
+	},
+	{
+		"title":"DIVERSIDAD LINGÜÍSTICA", 
+		"images":[
+			{ "desc":"", "src":"./multimedia/img/post_diversidad_linguistica/map_general.jpg", "type":"img", "pdf":null },
+			{ "desc":"", "src":"./multimedia/img/post_diversidad_linguistica/map_municipios.jpg", "type":"img", "pdf":null },
+			{ "desc":"", "src":"./multimedia/img/post_diversidad_linguistica/plurilingue.jpg", "type":"img", "pdf":null },
+			{ "desc":"Náhuatl", "src":"./multimedia/img/post_diversidad_linguistica/nahuatl.jpg", "type":"img", "pdf":null },
+			{ "desc":"Totonaco", "src":"./multimedia/img/post_diversidad_linguistica/totonaco.jpg", "type":"img", "pdf":null },
+			{ "desc":"Mixteco", "src":"./multimedia/img/post_diversidad_linguistica/mixteco.jpg", "type":"img", "pdf":null },
+			{ "desc":"Tepehua", "src":"./multimedia/img/post_diversidad_linguistica/tepehua.jpg", "type":"img", "pdf":null },
+			{ "desc":"Otomí", "src":"./multimedia/img/post_diversidad_linguistica/otomi.jpg", "type":"img", "pdf":null },
+			{ "desc":"Ngiva", "src":"./multimedia/img/post_diversidad_linguistica/ngiva.jpg", "type":"img", "pdf":null },
+			{ "desc":"Mazateco", "src":"./multimedia/img/post_diversidad_linguistica/mazateco.jpg", "type":"img", "pdf":null }
+		],
+		"audios":[],
+		"videos":[]
+	},
+	{
+		"title":"ALFABETOS", 
+		"images":[
+			{ "desc":"Náhuatl", "src":"./multimedia/img/post_alfabetos/nahuatl.png", "type":"img", "pdf":null },
+			{ "desc":"Totonaco", "src":"./multimedia/img/post_alfabetos/totonaco.png", "type":"img", "pdf":null },
+			{ "desc":"Mixteco", "src":"./multimedia/img/post_alfabetos/mixteco.png", "type":"img", "pdf":null }
+		],
+		"audios":[],
+		"videos":[]
+	},
+	{
+		"title":"PARTES DE LA MILPA", 
+		"images":[
+			{ "desc":"Español", "src":"./multimedia/img/post_partes_milpa/esp.png", "type":"img", "pdf":null },
+			{ "desc":"Náhuatl", "src":"./multimedia/img/post_partes_milpa/nahuatl.png", "type":"img", "pdf":null },
+			{ "desc":"Totonaco", "src":"./multimedia/img/post_partes_milpa/totonaco.png", "type":"img", "pdf":null }
+		],
+		"audios":[],
+		"videos":[]
+	},
+	{
+		"title":"TERRITORIOS BIOCULTURALES", 
+		"images":[
+			{ "desc":"Náhuatl Estatal", "src":"./multimedia/img/post_territirios_bioculturales/nahuatl_estatal.png", "type":"img", "pdf":null },
+			{ "desc":"Náhuatl Puebla - Veracruz", "src":"./multimedia/img/post_territirios_bioculturales/nahuatl_puebla_veracruz.png", "type":"img", "pdf":null },
+			{ "desc":"Náhuatl Sierra Negra", "src":"./multimedia/img/post_territirios_bioculturales/nahuatl_sierra_negra.png", "type":"img", "pdf":null },
+			{ "desc":"Totonaco Estatal", "src":"./multimedia/img/post_territirios_bioculturales/totonaco_estatal.png", "type":"img", "pdf":null },
+			{ "desc":"Totonaco Total", "src":"./multimedia/img/post_territirios_bioculturales/totonaco_total.png", "type":"img", "pdf":null },
+			{ "desc":"Mixteco Estatal", "src":"./multimedia/img/post_territirios_bioculturales/mixteco_estatal.png", "type":"img", "pdf":null },
+			{ "desc":"Mixteco Total", "src":"./multimedia/img/post_territirios_bioculturales/mixteco_total.png", "type":"img", "pdf":null },
+			{ "desc":"Tepehua Estatal", "src":"./multimedia/img/post_territirios_bioculturales/tepehua_estatal.png", "type":"img", "pdf":null },
+			{ "desc":"Tepehua Total", "src":"./multimedia/img/post_territirios_bioculturales/tepehua_total.png", "type":"img", "pdf":null },
+			{ "desc":"Otomí Estatal", "src":"./multimedia/img/post_territirios_bioculturales/otomi_estatal.png", "type":"img", "pdf":null },
+			{ "desc":"Otomí Total", "src":"./multimedia/img/post_territirios_bioculturales/otomi_total.png", "type":"img", "pdf":null },           
+			{ "desc":"Ngiva Estatal", "src":"./multimedia/img/post_territirios_bioculturales/ngiva_estatal.png", "type":"img", "pdf":null },
+			{ "desc":"Mazateco Estatal", "src":"./multimedia/img/post_territirios_bioculturales/mazateco_estatal.png", "type":"img", "pdf":null },
+			{ "desc":"Mazateco Total", "src":"./multimedia/img/post_territirios_bioculturales/mazateco_total.png", "type":"img", "pdf":null }
+
+		],
+		"audios":[],
+		"videos":[]
+	},
+	{
+		"title":"¿DÓNDE ESTÁN LOS PUEBLOS INDÍGENAS Y SUS HABLANTES", 
+		"images":[
+			{ "desc":"Portada 1", "src":"./multimedia/img/post_pueblos_indigenas/portada_1.png", "type":"img", "pdf":null },
+			{ "desc":"Portada 2", "src":"./multimedia/img/post_pueblos_indigenas/portada_2.png", "type":"img", "pdf":null },
+			{ "desc":"Náhuatl", "src":"./multimedia/img/post_pueblos_indigenas/nahuatl.png", "type":"img", "pdf":null },
+			{ "desc":"Totonaco", "src":"./multimedia/img/post_pueblos_indigenas/totonaco.png", "type":"img", "pdf":null },
+			{ "desc":"Mixteco", "src":"./multimedia/img/post_pueblos_indigenas/mixteco.png", "type":"img", "pdf":null },
+			{ "desc":"Tepehua", "src":"./multimedia/img/post_pueblos_indigenas/tepehua.png", "type":"img", "pdf":null },
+			{ "desc":"Otomí", "src":"./multimedia/img/post_pueblos_indigenas/otomi.png", "type":"img", "pdf":null },
+			{ "desc":"Ngiva", "src":"./multimedia/img/post_pueblos_indigenas/ngiva.png", "type":"img", "pdf":null },
+			{ "desc":"Mazateco", "src":"./multimedia/img/post_pueblos_indigenas/mazateco.png", "type":"img", "pdf":null }
+		],
+		"audios":[],
+		"videos":[]
+	},
+	{
+		"title":"ANATOMIA DEL TACO", 
+		"images":[
+			{ "desc":"Español", "src":"./multimedia/img/post_anatomia_taco/esp.png", "type":"img", "pdf":null },
+			{ "desc":"Nahuatl Norte", "src":"./multimedia/img/post_anatomia_taco/nahuatl_norte.png", "type":"img", "pdf":null },
+			{ "desc":"Náhuatl Sur", "src":"./multimedia/img/post_anatomia_taco/nahuatl_sur.png", "type":"img", "pdf":null },
+			{ "desc":"Totonaco", "src":"./multimedia/img/post_anatomia_taco/totonaco.png", "type":"img", "pdf":null },
+			{ "desc":"Mixteco", "src":"./multimedia/img/post_anatomia_taco/mixteco.png", "type":"img", "pdf":null },
+			{ "desc":"Tepehua", "src":"./multimedia/img/post_anatomia_taco/tepehua.png", "type":"img", "pdf":null },
+			{ "desc":"Otomí", "src":"./multimedia/img/post_anatomia_taco/otomi.png", "type":"img", "pdf":null },
+			{ "desc":"Ngiva", "src":"./multimedia/img/post_anatomia_taco/ngiva.png", "type":"img", "pdf":null },
+			{ "desc":"Mazateco", "src":"./multimedia/img/post_anatomia_taco/mazateco.png", "type":"img", "pdf":null }
+		],
+		"audios":[],
+		"videos":[]
+	},
+	{
+		"title":"DIETA DE LA MILPA", 
+		"images":[
+			{ "desc":"Español", "src":"./multimedia/img/post_dieta_milpa/esp.png", "type":"img", "pdf":null },
+			{ "desc":"Nahuatl Norte", "src":"./multimedia/img/post_dieta_milpa/nahuatl_norte.png", "type":"img", "pdf":null },
+			{ "desc":"Náhuatl Sur", "src":"./multimedia/img/post_dieta_milpa/nahuatl_sur.png", "type":"img", "pdf":null },
+			{ "desc":"Totonaco", "src":"./multimedia/img/post_dieta_milpa/totonaco.png", "type":"img", "pdf":null },
+			{ "desc":"Mixteco", "src":"./multimedia/img/post_dieta_milpa/mixteco.png", "type":"img", "pdf":null },
+			{ "desc":"Tepehua", "src":"./multimedia/img/post_dieta_milpa/tepehua.png", "type":"img", "pdf":null },
+			{ "desc":"Otomí", "src":"./multimedia/img/post_dieta_milpa/otomi.png", "type":"img", "pdf":null },
+			{ "desc":"Ngiva", "src":"./multimedia/img/post_dieta_milpa/ngiva.png", "type":"img", "pdf":null },
+			{ "desc":"Mazateco", "src":"./multimedia/img/post_dieta_milpa/mazateco.png", "type":"img", "pdf":null }
+		],
+		"audios":[],
+		"videos":[]
+	},
+	{
+		"title":"JARRITO BALANCEADO", 
+		"images":[
+			{ "desc":"Español", "src":"./multimedia/img/post_jarrito_balanceado/esp.png", "type":"img", "pdf":null },
+			{ "desc":"Nahuatl Norte", "src":"./multimedia/img/post_jarrito_balanceado/nahuatl_norte.png", "type":"img", "pdf":null },
+			{ "desc":"Totonaco", "src":"./multimedia/img/post_jarrito_balanceado/totonaco.png", "type":"img", "pdf":null },
+			{ "desc":"Mixteco", "src":"./multimedia/img/post_jarrito_balanceado/mixteco.png", "type":"img", "pdf":null },
+			{ "desc":"Tepehua", "src":"./multimedia/img/post_jarrito_balanceado/tepehua.png", "type":"img", "pdf":null },
+			{ "desc":"Otomí", "src":"./multimedia/img/post_jarrito_balanceado/otomi.png", "type":"img", "pdf":null },
+			{ "desc":"Ngiva", "src":"./multimedia/img/post_jarrito_balanceado/ngiva.png", "type":"img", "pdf":null },
+			{ "desc":"Mazateco", "src":"./multimedia/img/post_jarrito_balanceado/mazateco.png", "type":"img", "pdf":null }
+		],
+		"audios":[],
+		"videos":[]
+	},
+	{
+		"title":"SANO Y SABROSO, MI TACO AMOROSO", 
+		"images":[
+			{ "desc":"Español", "src":"./multimedia/img/post_mi_taco/esp.png", "type":"pdf", "pdf":"./multimedia/pdf/mi_taco/esp.pdf" },
+			{ "desc":"Nahuatl Norte", "src":"./multimedia/img/post_mi_taco/nahuatl_norte.png", "type":"pdf", "pdf":"./multimedia/pdf/mi_taco/nahuatl_norte.pdf" },
+			{ "desc":"Nahuatl Sur", "src":"./multimedia/img/post_mi_taco/nahuatl_sur.png", "type":"pdf", "pdf":"./multimedia/pdf/mi_taco/nahuatl_sur.pdf" },
+			{ "desc":"Totonaco", "src":"./multimedia/img/post_mi_taco/totonaco.png", "type":"pdf", "pdf":"./multimedia/pdf/mi_taco/totonaco.pdf" },
+			{ "desc":"Mixteco", "src":"./multimedia/img/post_mi_taco/mixteco.png", "type":"pdf", "pdf":"./multimedia/pdf/mi_taco/mixteco.pdf" },
+			{ "desc":"Tepehua", "src":"./multimedia/img/post_mi_taco/tepehua.png", "type":"pdf", "pdf":"./multimedia/pdf/mi_taco/tepehua.pdf" },
+			{ "desc":"Otomí", "src":"./multimedia/img/post_mi_taco/otomi.png", "type":"pdf", "pdf":"./multimedia/pdf/mi_taco/otomi.pdf" },
+			{ "desc":"Ngiva", "src":"./multimedia/img/post_mi_taco/ngiva.png", "type":"pdf", "pdf":"./multimedia/pdf/mi_taco/ngiva.pdf" },
+			{ "desc":"Mazateco", "src":"./multimedia/img/post_mi_taco/mazateco.png", "type":"pdf", "pdf":"./multimedia/pdf/mi_taco/mazateco.pdf" }
+		],
+		"audios":[],
+		"videos":[]
+	}
+]

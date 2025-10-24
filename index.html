@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> SIEPI PUEBLA </title>
+      <!-- <title>Sistema de Información y Estadística sobre los Pueblos y Comunidades Indígenas</title> -->
+      <meta name="description" content="Sistema de Información y Estadística sobre los Pueblos y Comunidades Indígenas del Estado de Puebla">
+      <link rel="shortcut icon" href="./assets/img/logos/baston.jpg" />
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+       
+      <!--external css-->
+      <link rel="stylesheet" href="./assets/frameworks/bootstrap/bootstrap-4.0.0/package/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="./assets/frameworks/css/style_maps.css">
+      <link rel="stylesheet" href="./assets/frameworks/css/styles-slider.css">
+
+      <!--FRAMEWORK VUE JS and AXIOS-->
+      <link href="./assets/frameworks/vuetify/font-6.9.96/package/css/materialdesignicons.min.css" rel="stylesheet">
+      <link href="./assets/frameworks/vuetify/vuetify-2.6.12/package/dist/vuetify.min.css" rel="stylesheet">
+      <script src="./assets/frameworks/vue/vue-2.7.12/package/dist/vue.js"></script>
+      <script src="./assets/frameworks/vue/vuex-3.6.2.js"></script>
+      <script src="./assets/frameworks/axios/axios.min.js"></script> 
+
+      <!--=============== SWIPER CSS ===============-->
+      <link rel="stylesheet" href="./assets/frameworks/css/swiper-bundle.min.css">
+
+      <style>
+         /* body { filter: grayscale(100%); } */
+      </style>
+   </head>
+   <body>
+      <div id="App">
+         <v-app id="inspire">  
+            <template>
+               <v-app-bar app dark elevation="10" color="#9b162e" clipped-left src="./assets/img/logos/CINTA.png">
+                  <!--<v-app-bar-nav-icon></v-app-bar-nav-icon>-->
+                  <!-- <img @click="$store.dispatch('setUrl', 1);" src="./assets/img/logos/IMG-FUSION.png" class="responsive img-fluid" style="cursor: pointer"> -->
+                  <v-spacer></v-spacer>
+                  <img src="./assets/img/logos/siepi_blanco.png" style=" margin-top: 2px; margin-bottom: 5px; margin-right: 25px; width: 100%; max-width: 200px; height: auto;">
+               </v-app-bar>
+            </template>
+            <!-- Contents -->
+            <v-main>
+               <!-- <v-container> </v-container> -->
+               <component :is="headerComp"></component>
+               <component :is="mainComp"></component>
+               <component :is="footerComp"></component>
+               <component :is="imagesCarouselComp"></component>
+               <!--<br>
+               <div style="text-align: center">
+                  <video src="multimedia/video/page-construction.mp4" autoplay loop="" muted="" style="width: 40%;"></video>
+               </div>-->
+            </v-main>
+
+
+            <!--POP-UPS-->
+            <template>
+               <v-dialog v-model="$store.state.Dialog_file.actived" :max-width="$store.state.img_contain.width">
+                  <v-card>
+                     <template v-if="$store.state.Dialog_file.type == 'img'">
+                        <v-img contain :height="$store.state.img_contain.height" max-width="100%" :src='$store.state.Dialog_file.src' class="grey darken-3">
+                           <template v-slot:placeholder>
+                              <v-row class="fill-height ma-0" align="center" justify="center" >
+                                 <v-progress-circular indeterminate color="grey lighten-5" ></v-progress-circular>
+                              </v-row>
+                           </template>
+                        </v-img>
+                     </template>
+                     <template v-if="$store.state.Dialog_file.type == 'pdf'">
+                        <embed :src='$store.state.Dialog_file.src' type="application/pdf" width="100%" :height="$store.state.img_contain.height" />
+                     </template>
+                  </v-card>
+               </v-dialog>
+
+               <v-dialog v-model="$store.state.Dialog_Loader" scrollable persistent width="300">
+                  <v-card color="#9b162e" dark>
+                     <v-card-text class="centered">
+                        Por favor espere
+                        <v-progress-linear indeterminate color="white" class="mb-0" ></v-progress-linear>
+                     </v-card-text>
+                  </v-card>
+               </v-dialog>
+            </template>
+         </v-app>
+      </div>
+   </body>
+</html>
+
+<script src="assets/js/swiper-bundle.min.js"></script>
+<!-- <script src="assets/js/main.js"></script> -->
+
+<!--APP STORE VUEX JS-->
+<script src="./assets/frameworks/vuetify/vuetify-2.6.12/package/dist/vuetify.js"></script>
+<!-- <script type="module" src="./assets/js/index.vue.min.js"></script> -->
+<script type="module" src="./assets/js/index.vue.js"></script>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SIEPI</title>
+   <link rel="shortcut icon" href="./assets/img/logos/baston.jpg" />
+   <link rel="stylesheet" href="./assets/frameworks/bootstrap/bootstrap-4.0.0/package/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="./assets/frameworks/css/style_maps.css">
+   <link href="./assets/frameworks/vuetify/font-6.9.96/package/css/materialdesignicons.min.css" rel="stylesheet">
+   <link href="./assets/frameworks/vuetify/vuetify-2.6.12/package/dist/vuetify.min.css" rel="stylesheet">
+   <script src="./assets/frameworks/vue/vue-2.7.12/package/dist/vue.js"></script>
+   <script src="./assets/frameworks/vue/vuex-3.6.2.js"></script>
+   <script src="./assets/frameworks/axios/axios.min.js"></script>
+</head>
+
+<body>
+   <div id="App">
+      <v-app id="inspire">
+         <template>
+            <v-app-bar app dark elevation="10" color="#9b162e" clipped-left src="./assets/img/logos/CINTA.png">
+               <v-app-bar-nav-icon @click.stop="drawer=!drawer"></v-app-bar-nav-icon>
+               <img src="./assets/img/logos/LOGO_PUEBLA.png" class="responsive img-fluid" style=" max-width: 150px;">
+               <v-spacer></v-spacer>
+               <img src="./assets/img/logos/Logo_siepi.png" style=" margin-top: 15px; margin-right: 25px; width: 100%; max-width: 100px; height: auto;" class="img-fluid">
+               <v-btn elevation="2" color="grey" small  @click="$store.dispatch('logout',{type:'serve'});">Salir </v-btn>
+            </v-app-bar>
+         </template>
+         <template>
+            <v-navigation-drawer app dark v-model="drawer" width="250px" clipped style="padding-top: 10px;">
+               <template v-if="img_user !=null">
+                  <p class="centered">
+                     <a href="" onclick="return false;"><img :src="img_user.url" class="img-circle"></a>
+                  </p>
+                  <h6 class="centered title_user" style="color:#f8f9fa;">
+                     {{name_user}} <br> {{time_left}}
+                     <v-progress-linear :value="progress" color="white" height="7"> </v-progress-linear>
+                  </h6>
+                  <v-divider></v-divider>
+               </template>
+               <template v-if="components.generals.length >0">
+                  <h6 class="centered" style="color:#f8f9fa; margin-bottom: 0px;"> Datos Generales </h6>
+                  <v-list nav dense>
+                     <template v-for="(item, index) in components.generals">
+                        <v-list-item link v-if="item.team==='0'" :key="item.place" @click="getComponents(item.component)" :title="item.description">
+                           <v-list-item-icon class="icon_list">
+                              <img :src="item.icon" class="iconue">
+                              </v-list-item-icon>
+                              <v-list-item-title>{{item.description}}</v-list-item-title>
+                        </v-list-item>
+                        <v-list-group :value="false" v-if="item.team==='1'" :title="item.description" style="min-width: 25px !important;">
+                           <template v-slot:activator>
+                              <v-list-item-icon class="icon_list">
+                                 <img :src="item.icon" class="iconue">
+                              </v-list-item-icon>
+                              <v-list-item-title>{{item.description}}</v-list-item-title>
+                           </template>
+                           <v-list-item v-for="(sub_module, i) in item.sub_modules" :key="i" link :title="sub_module.description">
+                              <template>
+                                 <v-list-item-icon class="icon_list"></v-list-item-icon>
+                                 <v-list-item-title @click="getComponents(sub_module.component)">{{sub_module.description}}</v-list-item-title>
+                              </template>
+                           </v-list-item>
+                        </v-list-group>
+                     </template>
+                  </v-list>
+                  <v-divider></v-divider>
+               </template>
+               <template v-if="components.indicators.length >0">
+                  <h6 class="centered" style="color:#f8f9fa; margin-bottom: 0px;">Indicadores </h6>
+                  <v-list nav dense>
+                     <template v-for="(item, index) in components.indicators">
+                        <v-list-item link v-if="item.team==='0'" :key="item.place" @click="getComponents(item.component)" :title="item.description">
+                           <v-list-item-icon class="icon_list">
+                              <img :src="item.icon" class="iconue">
+                           </v-list-item-icon>
+                           <v-list-item-title>{{item.description}}</v-list-item-title>
+                        </v-list-item>
+                        <v-list-group :value="false" v-if="item.team==='1'" :title="item.description">
+                           <template v-slot:activator>
+                              <v-list-item-icon class="icon_list">
+                                 <img :src="item.icon" class="iconue">
+                              </v-list-item-icon>
+                              <v-list-item-title>{{item.description}}</v-list-item-title>
+                           </template>
+                           <v-list-item v-for="(sub_module, i) in item.sub_modules" :key="i" link :title="sub_module.description">
+                              <template>
+                                 <v-list-item-icon class="icon_list"> </v-list-item-icon>
+                                 <v-list-item-title @click="getComponents(sub_module.component)">{{sub_module.description}}</v-list-item-title>
+                              </template>
+                           </v-list-item>
+                        </v-list-group>
+                     </template>
+                  </v-list>
+               </template>
+            </v-navigation-drawer>
+         </template>
+         <v-main>
+            <v-container>
+               <component :is="mainComp"></component>
+               <component :is="viewFileComp"></component>
+            </v-container>
+         </v-main>
+         <template>
+            <v-dialog v-model="$store.state.dialog_loader" scrollable persistent width="300">
+               <v-card color="#9b162e" dark>
+                  <v-card-text class="centered">
+                     Por favor espere
+                     <v-progress-linear indeterminate color="white" class="mb-0"></v-progress-linear>
+                  </v-card-text>
+               </v-card>
+            </v-dialog>
+         </template>
+      </v-app>
+   </div>
+</body>
+
+</html>
+<script src="./assets/frameworks/vuetify/vuetify-2.6.12/package/dist/vuetify.js"></script>
+<script type="module" src="./assets/js/dashboard.vue.min.js"></script>
