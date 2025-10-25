@@ -5,7 +5,7 @@
    class health{
       static public function getData(){
          $Items_BD = ModelsBD::SelectFrom("SELECT S.Id, M.nombre AS title, M.latitud AS Lat_, M.longitud AS Long_, S.Poblacion
-                                          FROM `salud_por_municipio` S, `municipios` M
+                                          FROM `salud_por_municipio_v2` S, `municipios_v2` M
                                           WHERE (S.Id_Mun = M.id)
                                           ORDER BY M.nombre ASC");
          $return = new response();
@@ -13,7 +13,7 @@
       }
       static public function setFind($ID){
          $Item_BD = ModelsBD::getFind("SELECT SM.Id, M.nombre AS Municipio, R.nombre AS Region, SM.Poblacion, SM.NH, SM.NM, SM.MH, SM.MM, SM.NE, SM.CE, SM.HG, SM.HE, SM.CSS, SM.SSS, SM.Otros, SM.PMISPS, SM.CTSC, SM.PCASS
-                                       FROM `salud_por_municipio` SM, `municipios` M, `regiones` R 
+                                       FROM `salud_por_municipio_v2` SM, `municipios_v2` M, `regiones_v2` R 
                                        WHERE (SM.Id_Mun = M.id) AND (M.region = R.id) AND SM.Id = $ID");
          $return = new response();
          if(!empty($Item_BD)){

@@ -17,8 +17,8 @@
             return $return->setResponse(null, $ValToken['alert'], $ValToken['status']);
          }
          $Items_BD = ModelsBD::getFilter("SELECT M.id, M.nombre AS nombre_municipio, R.nombre AS nombre_region 
-                                          FROM municipios M 
-                                          JOIN regiones R ON M.region = R.id 
+                                          FROM municipios_v2 M 
+                                          JOIN regiones_v2 R ON M.region = R.id 
                                           ORDER BY M.id ASC;");
          $return->setResponse($Items_BD, null, null);
       }

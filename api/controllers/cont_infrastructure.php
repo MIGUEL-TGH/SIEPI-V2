@@ -5,7 +5,7 @@
    class infrastructure{
       static public function getData(){
          $Items_BD = ModelsBD::SelectFrom("SELECT IM.Id, M.nombre AS title, M.latitud AS Lat_, M.longitud AS Long_, IM.TV
-                                          FROM `infraestructura_por_municipio` IM, `municipios` M
+                                          FROM `infraestructura_por_municipio_v2` IM, `municipios_v2` M
                                           WHERE (IM.Id_Mun = M.id)
                                           ORDER BY M.nombre ASC");
          $return = new response();
@@ -14,7 +14,7 @@
 
       static public function setFind($ID){
          $Items_BD = ModelsBD::getFind("SELECT IM.Id, M.nombre AS Municipio, R.nombre AS Region, IM.TV, IM.AV, IM.EV, IM.DV, IM.CCEV_2020
-                                       FROM `infraestructura_por_municipio` IM, `municipios` M, `regiones` R 
+                                       FROM `infraestructura_por_municipio_v2` IM, `municipios_v2` M, `regiones_v2` R 
                                        WHERE (IM.Id_Mun = M.id) AND (M.region = R.id) AND IM.Id = $ID");
          $return = new response();
          if(!empty($Items_BD)){

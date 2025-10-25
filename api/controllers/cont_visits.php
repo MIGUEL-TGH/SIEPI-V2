@@ -44,7 +44,7 @@
                $params['page'] = $comp;
                $params['date_time'] = $item['dateTime'];
                
-               $response = ModelsBD::setInsert('visits', $params);
+               $response = ModelsBD::setInsert('visits_v2', $params);
                if($response['status'] === 200){
                   return $return->setResponse($response['comment'], '', 200);
                }else if ($response['status'] === 400){
@@ -75,7 +75,7 @@
                case 'global': 
                   $Items_BD = ModelsBD::getFilter(
                   "SELECT  v.page,  p.name AS name, COUNT(*) AS cant
-                     FROM  visits v
+                     FROM  visits_v2 v
                      JOIN  pages p ON p.id = v.page
                      GROUP BY  v.page, p.name
                      ORDER BY  p.name ASC;

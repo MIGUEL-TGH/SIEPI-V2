@@ -31,69 +31,69 @@
          // case '/api/users':
          //    include "services/serv_users.php";
          // break;
-         case '/siepi/api/login':
+         case '/siepi-v2/api/login':
             include "services/serv_login.php";
          break;
-         case '/siepi/api/users':
+         case '/siepi-v2/api/users':
             include "services/serv_users.php";
          break;
-         case '/siepi/api/uploadfile':
+         case '/siepi-v2/api/uploadfile':
             include "services/serv_uploadfile.php";
          break;
-         case '/siepi/api/user_permissions':
+         case '/siepi-v2/api/user_permissions':
             include "services/serv_user_permissions.php";
          break;
 
          //---------------------main-----------------------------
-         case '/siepi/api/visits':
+         case '/siepi-v2/api/visits':
             include "services/serv_visits.php";
          break;
-         case '/siepi/api/fuentes_info':
+         case '/siepi-v2/api/fuentes_info':
             include "services/serv_fuentes_info.php";
          break;
 
          //--------------------------------------------------
-         case '/siepi/api/regions':
+         case '/siepi-v2/api/regions':
             include "services/serv_regions.php";
          break;
          //--------------------map------------------------------
-         case '/siepi/api/map':
+         case '/siepi-v2/api/map':
             include "services/serv_map.php";
          break;
-         case '/siepi/api/economy':
+         case '/siepi-v2/api/economy':
             include "services/serv_economy.php";
          break;
-         case '/siepi/api/migration':
+         case '/siepi-v2/api/migration':
             include "services/serv_migration.php";
          break;
-         case '/siepi/api/infrastructure':
+         case '/siepi-v2/api/infrastructure':
             include "services/serv_infrastructure.php";
          break;
-         case '/siepi/api/governance':
+         case '/siepi-v2/api/governance':
             include "services/serv_governance.php";
          break;
-         case '/siepi/api/environment':
+         case '/siepi-v2/api/environment':
             include "services/serv_environment.php";
          break;
-         case '/siepi/api/health':
+         case '/siepi-v2/api/health':
             include "services/serv_health.php";
          break;
-         case '/siepi/api/culture':
+         case '/siepi-v2/api/culture':
             include "services/serv_culture.php";
          break;
-         case '/siepi/api/justice':
+         case '/siepi-v2/api/justice':
             include "services/serv_justice.php";
          break;
-         case '/siepi/api/technology':
+         case '/siepi-v2/api/technology':
             include "services/serv_technology.php";
          break;
-         case '/siepi/api/education':
+         case '/siepi-v2/api/education':
             include "services/serv_education.php";
          break;
-         case '/siepi/api/afromexicana':
+         case '/siepi-v2/api/afromexicana':
             include "services/serv_afromexicana.php";
          break;
-         case '/siepi/api/lenguages':
+         case '/siepi-v2/api/lenguages':
             include "services/serv_lenguages.php";
          break;
 
@@ -101,7 +101,7 @@
          case '/api/regiones':
                include "services/serv_regiones.php";
             break;
-         case '/siepi/api/townhall': // Municipios
+         case '/siepi-v2/api/townhall': // Municipios
             include "services/serv_townhall.php";
          break;
          //--------------------------------------------------

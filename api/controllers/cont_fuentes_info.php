@@ -26,7 +26,7 @@
          $results = [];
          foreach ($indicators as $name => $idMod) {
             $query = "SELECT f.`desc_` AS `Desc_`, f.`link` AS `Link`
-                        FROM `fuentes_informacion` f
+                        FROM `fuentes_informacion_v2` f
                         WHERE f.`id_mod` = $idMod AND f.`status` = 1
                         ORDER BY f.`id` ASC";
             $items = ModelsBD::getFilter($query);
@@ -50,7 +50,7 @@
          // }
 
          $Items_BD = ModelsBD::getFilter("SELECT f.`id`, m.description AS indicator ,f.`desc_`, f.`link`, f.`status` 
-                                          FROM `fuentes_informacion` f ,`modules` m 
+                                          FROM `fuentes_informacion_v2` f ,`modules_v2` m 
                                           WHERE (f.id_mod = m.id)
                                           ORDER BY f.`id` ASC;");
          if(!empty($Items_BD)){
@@ -68,7 +68,7 @@
          //    return $return->setResponse(null, $valToken['alert'], $valToken['status']);
          // }
 
-         $Items_BD = ModelsBD::getFilter("SELECT `id`, `description` FROM `modules` WHERE `status` = 1 AND `map` = 1 ORDER BY `place` ASC;");
+         $Items_BD = ModelsBD::getFilter("SELECT `id`, `description` FROM `modules_v2` WHERE `status` = 1 AND `map` = 1 ORDER BY `place` ASC;");
          if(!empty($Items_BD)){
             return $return->setResponse($Items_BD, null, null);
          }else{
@@ -91,7 +91,7 @@
                   $params['link'] = $param['link'];
                   $params['status'] = ($param['status']) ? 1 : 0;
 
-                  $response = ModelsBD::setInsert('fuentes_informacion', $params);
+                  $response = ModelsBD::setInsert('fuentes_informacion_v2', $params);
                   if($response['status'] === 200){
                      $result["id"] = $response["id"];
                      $result["task"] = 'save_item';
@@ -111,7 +111,7 @@
                      $params['link'] = $param['link'];
                      $params['status'] = ($param['status']) ? 1 : 0;
    
-                     $response = ModelsBD::setUpdate('fuentes_informacion', $params);
+                     $response = ModelsBD::setUpdate('fuentes_informacion_v2', $params);
                      if($response['status'] === 200){
                         $result["id"] = $params['id'];
                         // $result["status"] = $params['status'];

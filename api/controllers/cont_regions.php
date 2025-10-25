@@ -16,7 +16,7 @@ use LDAP\Result;
             return $return->setResponse(null, $ValToken['alert'], $ValToken['status']);
          }
 
-         $Items_BD = ModelsBD::getFilter("SELECT `id`, `numero`, `nombre`, `sede`, `latitud`, `longitud`, `estatus` FROM `regiones` ORDER BY `id`;");
+         $Items_BD = ModelsBD::getFilter("SELECT `id`, `numero`, `nombre`, `sede`, `latitud`, `longitud`, `estatus` FROM `regiones_v2` ORDER BY `id`;");
          $return->setResponse($Items_BD, null, null);
 
 
@@ -37,7 +37,7 @@ use LDAP\Result;
          // $return->setResponse($Items_BD, null, null);
       }
       static public function getInfoID($ID){
-         $Items_BD = ModelsBD::getFilter("SELECT * FROM `afromexicana_por_municipio` WHERE Id_Mun = $ID;");
+         $Items_BD = ModelsBD::getFilter("SELECT * FROM `afromexicana_por_municipio_v2` WHERE Id_Mun = $ID;");
          $return = new response();
 
          if(!empty($Items_BD)){
@@ -133,7 +133,7 @@ use LDAP\Result;
          $result = array();
          switch ($data['task']) {
             case '2':
-               $result = ModelsBD::setUpdate('regiones', $params);
+               $result = ModelsBD::setUpdate('regiones_v2', $params);
                if($result == null){
                   return $return->setResponse(null, 'incorrect parameters', 400);
                }

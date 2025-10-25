@@ -143,6 +143,7 @@ const App_Vue = new Vue({
          try {
             await axios.get(this.http + 'map?type=items')
             .then((response) => {
+               // console.log(response);
                if(response.data.status == 200){
                   // const result = response.data.result.map(item => ({
                   //    ...item,
@@ -150,7 +151,7 @@ const App_Vue = new Vue({
                   // }));
                   // this.Indicators = result;
                   this.Indicators = response.data.result;
-                  console.log(this.Indicators);
+                  // console.log(this.Indicators);
                }
             }, error => { 
                console.log(error.response.data);

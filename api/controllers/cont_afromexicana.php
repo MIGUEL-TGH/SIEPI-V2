@@ -6,7 +6,7 @@
       //--------------------public access-------------------------------------------  
       static public function getData(){
          $Items_BD = ModelsBD::SelectFrom("SELECT AF.Id_mun AS Id, M.nombre AS title, M.latitud AS Lat_, M.longitud AS Long_, SUM(AF.A + AF.B + AF.C + AF.D + AF.E + AF.F + AF.G + AF.H + AF.I + AF.J + AF.K + AF.L + AF.M + AF.N + AF.P + AF.O + AF.Q + AF.R + AF.S) AS TOTAL
-                                          FROM `afromexicana_por_municipio` AF, `municipios` M
+                                          FROM `afromexicana_por_municipio_v2` AF, `municipios_v2` M
                                           WHERE (AF.Id_Mun = M.id)
                                           GROUP BY AF.Id_Mun  
                                           ORDER BY M.nombre ASC");
@@ -15,7 +15,7 @@
       }
       static public function setFind($ID){
          $Item_BD = ModelsBD::getFilter("SELECT AF.Id, M.nombre AS Municipio, R.nombre AS Region, AF.Genero, AF.A, AF.B, AF.C, AF.D, AF.E, AF.F, AF.G, AF.H, AF.I, AF.J, AF.K, AF.L, AF.M, AF.N, AF.P, AF.O, AF.Q, AF.R, AF.S, SUM(AF.A + AF.B + AF.C + AF.D + AF.E + AF.F + AF.G + AF.H + AF.I + AF.J + AF.K + AF.L + AF.M + AF.N + AF.P + AF.O + AF.Q + AF.R + S) AS Total
-                                       FROM `afromexicana_por_municipio` AF, `municipios` M, `regiones` R
+                                       FROM `afromexicana_por_municipio_v2` AF, `municipios_v2` M, `regiones_v2` R
                                        WHERE (AF.Id_Mun = M.id) AND (M.region = R.id) AND AF.Id_mun = $ID
                                        GROUP BY AF.Genero");
          $return = new response();
@@ -124,7 +124,7 @@
                                           SUM(CASE WHEN Genero = 'M' THEN AF.A + AF.B + AF.C + AF.D + AF.E + AF.F + AF.G + AF.H + AF.I + AF.J + AF.K + AF.L + AF.M + AF.N + AF.P + AF.O + AF.Q + AF.R + AF.S ELSE 0 END) AS TotalM,
                                           SUM(CASE WHEN Genero = 'H' THEN AF.A + AF.B + AF.C + AF.D + AF.E + AF.F + AF.G + AF.H + AF.I + AF.J + AF.K + AF.L + AF.M + AF.N + AF.P + AF.O + AF.Q + AF.R + AF.S ELSE 0 END) AS TotalH,
                                           SUM(AF.A + AF.B + AF.C + AF.D + AF.E + AF.F + AF.G + AF.H + AF.I + AF.J + AF.K + AF.L + AF.M + AF.N + AF.P + AF.O + AF.Q + AF.R + AF.S) AS Total
-                                          FROM `afromexicana_por_municipio` AF, `municipios` M, `regiones` R
+                                          FROM `afromexicana_por_municipio_v2` AF, `municipios_v2` M, `regiones_v2` R
                                           WHERE (AF.Id_Mun = M.id) AND (M.region = R.id)
                                           GROUP BY AF.Id_Mun  
                                           ORDER BY M.nombre ASC");
@@ -132,7 +132,7 @@
          $return->setResponse($Items_BD, null, null);
       }
       static public function getInfoID($ID){
-         $Items_BD = ModelsBD::getFilter("SELECT * FROM `afromexicana_por_municipio` WHERE Id_Mun = $ID;");
+         $Items_BD = ModelsBD::getFilter("SELECT * FROM `afromexicana_por_municipio_v2` WHERE Id_Mun = $ID;");
          $return = new response();
 
          if(!empty($Items_BD)){
@@ -204,7 +204,7 @@
          $result = array();
          switch ($data['task']) {
             case '2':
-               $result = ModelsBD::setUpdate('afromexicana_por_municipio', $params);
+               $result = ModelsBD::setUpdate('afromexicana_por_municipio_v2', $params);
                if($result == null){
                   return $return->setResponse(null, 'incorrect parameters', 400);
                }

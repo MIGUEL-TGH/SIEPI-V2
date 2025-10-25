@@ -5,7 +5,7 @@
    class economy{
       static public function getData(){
          $Items_BD = ModelsBD::SelectFrom("SELECT E.Id, M.nombre AS title, M.latitud AS Lat_, M.longitud AS Long_, E.Poblacion
-                                          FROM `economia_por_municipio` E, `municipios` M
+                                          FROM `economia_por_municipio_v2` E, `municipios_v2` M
                                           WHERE (E.Id_Mun = M.id)
                                           ORDER BY M.nombre ASC");
          $return = new response();
@@ -14,7 +14,7 @@
 
       static public function setFind($ID){
          $Item_BD = ModelsBD::getFind("SELECT E.Id, M.nombre AS Municipio, R.nombre AS Region, E.Poblacion, E.GMM, E.PM, E.PE, E.ACEAAFPC, E.C_Menor, E.C_Mayor, E.Ind_M, E.SATPAB, E.Otros, E.Micro, E.Pequenia, E.Mediana, E.Grande, E.PO, E.PD, E.Fecha
-                                       FROM `economia_por_municipio` E, `municipios` M, `regiones` R 
+                                       FROM `economia_por_municipio_v2` E, `municipios_v2` M, `regiones_v2` R 
                                        WHERE (E.Id_Mun = M.id) AND (M.region = R.id) AND E.Id = $ID");
          $return = new response();
          if(!empty($Item_BD)){

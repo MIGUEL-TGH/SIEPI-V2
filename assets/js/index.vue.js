@@ -176,7 +176,7 @@ const store = new Vuex.Store({
 
       },
       async setComponents({ state, dispatch }, value){
-         console.log('setComponents()-->', value);
+         // console.log('setComponents()-->', value);
          state.Dialog_Loader = true;
          const COMPONETS = {
             'main': async () => {  //main
@@ -387,7 +387,7 @@ const App_Vue = new Vue({
    components:{},
    methods:{
       async getParams(event){
-         console.log('getParams()-->', event);
+         // console.log('getParams()-->', event);
          
          store.state.url = new URL(window.location);
          store.state.urlParams = await new URLSearchParams(store.state.url.search);      

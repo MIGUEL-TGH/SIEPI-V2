@@ -2,10 +2,16 @@
    class ConnectionBD{
       static public function InfoBD(){
          $infoBD = array(
+            // BD Local
+         // 'host' => 'localhost',
+         // 'user' => 'root',
+         // 'pass' => '', // mtgh
+         // 'bd' => 'siepi_v2',
+            // BD Producción
          'host' => 'localhost',
-         'user' => 'root',
-         'pass' => '', // mtgh
-         'bd' => 'siepi',
+         'user' => 'stockyap_user_mtgh',
+         'pass' => 'J6ejv_nQnYe!_~RP',
+         'bd' => 'stockyap_stockyapp'
          );
          return $infoBD;
       }

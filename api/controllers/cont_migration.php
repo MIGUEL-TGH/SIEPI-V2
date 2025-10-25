@@ -5,7 +5,7 @@
    class migration{
       static public function getData(){
          $Items_BD = ModelsBD::SelectFrom("SELECT MM.Id, M.nombre AS Municipio, M.latitud AS Lat_, M.longitud AS Long_, MM.PFNOE, MM.PMNOE
-                                          FROM `migracion_por_municipio` MM, `municipios` M
+                                          FROM `migracion_por_municipio_v2` MM, `municipios_v2` M
                                           WHERE (MM.Id_Mun = M.id)
                                           ORDER BY M.nombre ASC");
          $return = new response();
@@ -28,7 +28,7 @@
       }
       static public function setFind($ID){
          $Item_BD = ModelsBD::getFind("SELECT MM.Id, M.nombre AS Municipio, R.nombre AS Region, MM.IGIM, MM.IGIM_2010, MM.IGIM_2020, MM.PFNOE, MM.PMNOE, MM.VT, MM.VRR, MM.ICR_2022
-                                       FROM `migracion_por_municipio` MM, `municipios` M, `regiones` R 
+                                       FROM `migracion_por_municipio_v2` MM, `municipios_v2` M, `regiones_v2` R 
                                        WHERE (MM.Id_Mun = M.id) AND (M.region = R.id) AND MM.Id = $ID");
          $return = new response();
          if(!empty($Item_BD)){

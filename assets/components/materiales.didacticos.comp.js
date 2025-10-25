@@ -86,7 +86,7 @@ export default Vue.component('materiales_didacticos_comp',{
                               <v-col v-if="element.images.length" v-for="(item, index) in element.images" :key="index" cols="auto" class="p-2">
                                  <v-card class="card_posters imgHover" elevation="15">
                                     <img v-if="item.type=='img'" @click="expandFile({type:item.type, src:item.src})" :src="item.src" :srcset="srcset(item.src)" sizes="(max-width: 600px) 200px, 400px" alt="image" loading="lazy"/>
-                                    <img v-if="item.type=='pdf'" @click="expandFile({type:item.type, src:item.pdf})" :src="item.src" :srcset="srcset(item.src)" sizes="(max-width: 600px) 200px, 400px" alt="image" loading="lazy"/>
+                                    <img v-if="item.type=='pdf'" @click="expandFile({type:'open_window', src:item.pdf})" :src="item.src" :srcset="srcset(item.src)" sizes="(max-width: 600px) 200px, 400px" alt="image" loading="lazy"/>
                                  </v-card>  
                                  <div style="padding-top:10px">
                                     <v-card style=" background-color:#8C264B; color:white">

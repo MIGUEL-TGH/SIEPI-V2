@@ -5,7 +5,7 @@
    class technology{
       static public function getData(){
          $Items_BD = ModelsBD::SelectFrom("SELECT Tec.Id, M.nombre AS title, M.latitud AS Lat_, M.longitud AS Long_
-                                          FROM `tecnologia_por_municipio` Tec, `municipios` M
+                                          FROM `tecnologia_por_municipio_v2` Tec, `municipios_v2` M
                                           WHERE (Tec.Id_Mun = M.id)
                                           ORDER BY M.nombre ASC");
          $return = new response();
@@ -13,7 +13,7 @@
       }
       static public function setFind($ID){
          $Item_BD = ModelsBD::getFind("SELECT Tec.Id, M.nombre AS Municipio, R.nombre AS Region, Tec.ICHIGP, Tec.PWGCT, Tec.DOR, Tec.Televisor, Tec.CLT, Tec.LTF, Tec.TC, Tec.STP, Tec.SPMV, Tec.CV
-                                       FROM `tecnologia_por_municipio` Tec, `municipios` M, `regiones` R 
+                                       FROM `tecnologia_por_municipio_v2` Tec, `municipios_v2` M, `regiones_v2` R 
                                        WHERE (Tec.Id_Mun = M.id) AND (M.region = R.id) AND Tec.Id = $ID");
          $return = new response();
          if(!empty($Item_BD)){
