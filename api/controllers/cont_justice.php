@@ -5,7 +5,7 @@
    class justice{
       static public function getData(){
          $Items_BD = ModelsBD::SelectFrom("SELECT Jus.Id, M.nombre AS title, M.latitud AS Lat_, M.longitud AS Long_, Jus.DVF_2022
-                                          FROM `justicia_seguridad_por_municipio_v2` Jus, `municipios_v2` M
+                                          FROM `justicia_seguridad_por_municipio` Jus, `municipios` M
                                           WHERE (Jus.Id_Mun = M.id)
                                           ORDER BY M.nombre ASC");
          $return = new response();
@@ -13,10 +13,10 @@
       }
       static public function setFind($ID){
          // $Item_BD = ModelsBD::getFind("SELECT Just.Id, M.nombre AS Municipio, R.nombre AS Region, Just.CDPM, Just.COD, Just.ICJI, Just.DVF_2022, Just.DVGTSDVF_2022, Just.BE, Just.BC, Just.TP, Just.Ejidos, Just.Comunidades, Just.NA
-         //                               FROM `justicia_seguridad_por_municipio_v2` Just, `municipios_v2` M, `regiones_v2` R 
+         //                               FROM `justicia_seguridad_por_municipio` Just, `municipios` M, `regiones` R 
          //                               WHERE (Just.Id_Mun = M.id) AND (M.region = R.id) AND Just.Id = $ID");
          $Item_BD = ModelsBD::getFind("SELECT Just.Id, M.nombre AS Municipio, R.nombre AS Region, Just.ICJI, Just.DVF_2022, Just.DVGTSDVF_2022, Just.BE, Just.BC, Just.TP, Just.Ejidos, Just.Comunidades, Just.NA
-                                       FROM `justicia_seguridad_por_municipio_v2` Just, `municipios_v2` M, `regiones_v2` R 
+                                       FROM `justicia_seguridad_por_municipio` Just, `municipios` M, `regiones` R 
                                        WHERE (Just.Id_Mun = M.id) AND (M.region = R.id) AND Just.Id = $ID");
          $return = new response();
          if(!empty($Item_BD)){

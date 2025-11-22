@@ -51,7 +51,7 @@
          $result = array();
 
          $query = "SELECT m.`id`, m.`description` AS `title`, m.`uri`, m.`icon`, m.`color`, m.`team` 
-                  FROM `modules_v2` m 
+                  FROM `modules` m 
                   WHERE m.`map` = 1 AND m.`status` = 1 
                   ORDER BY m.`description` ASC;";
          $Items_BD = ModelsBD::getFilter($query);
@@ -63,7 +63,7 @@
          $moduleIds = array_column($Items_BD, 'id'); // Prepara una lista de ids de módulos para la consulta de submódulos
          $moduleIdsList = implode(',', $moduleIds); // Realiza una consulta para obtener todos los submódulos de una vez
          $subModulesQuery = "SELECT `id`, `id_mod`, `description` AS `title`, `icon`, `color`, search, id_search
-                              FROM `sub_modules_v2` 
+                              FROM `sub_modules` 
                               WHERE `id_mod` IN ($moduleIdsList) AND `status` = 1;";
          $subModules_BD = ModelsBD::getFilter($subModulesQuery);
 

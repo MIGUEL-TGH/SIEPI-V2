@@ -5,7 +5,7 @@
    class governance{
       static public function getData(){
          $Items_BD = ModelsBD::SelectFrom("SELECT GM.Id, M.nombre AS title, M.latitud AS Lat_, M.longitud AS Long_
-                                          FROM `gobernanza_por_municipio_v2` GM, `municipios_v2` M
+                                          FROM `gobernanza_por_municipio` GM, `municipios` M
                                           WHERE (GM.Id_Mun = M.id)
                                           ORDER BY M.nombre ASC");
          $return = new response();
@@ -13,7 +13,7 @@
       }
       static public function setFind($ID){
          $Item_BD = ModelsBD::getFind("SELECT GM.Id, M.nombre AS Municipio, R.nombre AS Region, GM.PH, GM.PM, GM.SH, GM.SM, GM.RH, GM.RM, GM.IASC
-                                       FROM `gobernanza_por_municipio_v2` GM, `municipios_v2` M, `regiones_v2` R 
+                                       FROM `gobernanza_por_municipio` GM, `municipios` M, `regiones` R 
                                        WHERE (GM.Id_Mun = M.id) AND (M.region = R.id) AND GM.Id = $ID");
          $return = new response();
          if(!empty($Item_BD)){

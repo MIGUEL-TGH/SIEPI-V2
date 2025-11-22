@@ -5,7 +5,7 @@
    class environment{
       static public function getData(){
          $Items_BD = ModelsBD::SelectFrom("SELECT AM.Id, M.nombre AS title, M.latitud AS Lat_, M.longitud AS Long_, AM.TMA
-                                          FROM `medio_ambiente_por_municipio_v2` AM, `municipios_v2` M
+                                          FROM `medio_ambiente_por_municipio` AM, `municipios` M
                                           WHERE (AM.Id_Mun = M.id)
                                           ORDER BY M.nombre ASC");
          $return = new response();
@@ -13,7 +13,7 @@
       }
       static public function setFind($ID){
          $Item_BD = ModelsBD::getFind("SELECT AM.Id, M.nombre AS Municipio, R.nombre AS Region, AM.ICM, AM.TMA, AM.IPA, AM.TS, AM.US, AM.ITR, AM.ITV, AM.RH, AM.Cuenca, AM.Subcuenca, AM.CA, AM.C_A, AM.I_F, AM.TH, AM.Herbaceo, AM.Harboreo, AM.Arbustivo, AM.ITC
-                                       FROM `medio_ambiente_por_municipio_v2` AM, `municipios_v2` M, `regiones_v2` R 
+                                       FROM `medio_ambiente_por_municipio` AM, `municipios` M, `regiones` R 
                                        WHERE (AM.Id_Mun = M.id) AND (M.region = R.id) AND AM.Id = $ID");
 
          $return = new response();

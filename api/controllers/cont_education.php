@@ -5,7 +5,7 @@
    class education{
       static public function getData(){
          $Items_BD = ModelsBD::SelectFrom("SELECT EM.Id, M.nombre AS title, M.latitud AS Lat_, M.longitud AS Long_
-                                          FROM `educacion_por_municipio_v2` EM, `municipios_v2` M
+                                          FROM `educacion_por_municipio` EM, `municipios` M
                                           WHERE (EM.Id_Mun = M.id)
                                           ORDER BY M.nombre ASC");
          $return = new response();
@@ -13,10 +13,10 @@
       }
       static public function setFind($ID){
          // $Item_BD = ModelsBD::getFind("SELECT E.Id, M.nombre AS Municipio, R.nombre AS Region, E.RS, E.TCTM, E.CAM, E.Secundarias, E.Primarias, E.Preescolares, E.EATECS, E.IA, E.PIM, E.PIM_, E.EEIC, E.EEIU, E.EEIB, E.EEIT
-         //                               FROM `educacion_por_municipio_v2` E, `municipios_v2` M, `regiones_v2` R
+         //                               FROM `educacion_por_municipio` E, `municipios` M, `regiones` R
          //                               WHERE (E.Id_Mun = M.id) AND (M.region = R.id) AND E.Id = $ID");
          $Item_BD = ModelsBD::getFind("SELECT E.Id, M.nombre AS Municipio, R.nombre AS Region, E.RS, E.TCTM, E.CAM, E.Secundarias, E.Primarias, E.Preescolares, E.EATECS, E.IA, E.PIM, E.PIM_
-                                       FROM `educacion_por_municipio_v2` E, `municipios_v2` M, `regiones_v2` R
+                                       FROM `educacion_por_municipio` E, `municipios` M, `regiones` R
                                        WHERE (E.Id_Mun = M.id) AND (M.region = R.id) AND E.Id = $ID");
         $return = new response();
         if(!empty($Item_BD)){

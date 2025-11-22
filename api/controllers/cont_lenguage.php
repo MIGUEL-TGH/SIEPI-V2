@@ -5,12 +5,12 @@
    class lenguage{      
       static public function getByTownHalls(){
          $result = array();
-         $TownHalls = ModelsBD::SelectFrom("SELECT M.id, M.nombre, M.latitud AS Lat_, M.longitud AS Long_ FROM `municipios_v2` M");
+         $TownHalls = ModelsBD::SelectFrom("SELECT M.id, M.nombre, M.latitud AS Lat_, M.longitud AS Long_ FROM `municipios` M");
          if(!empty($TownHalls)){
             foreach ($TownHalls as $Item) {
                extract($Item);
                $Lenguages = ModelsBD::getFilter("SELECT lpm.idlengua, L.nombre, SUM(lpm.nhablantes) as total 
-                                                FROM municipios_v2 M, lengua_por_municipio_v2 lpm, lenguas_v2 L
+                                                FROM municipios M, lengua_por_municipio lpm, lenguas L
                                                 WHERE M.id = lpm.idmunicipio AND lpm.idlengua = L.id  and M.id = $id
                                                 GROUP BY M.id, lpm.idlengua
                                                 ORDER BY total DESC");
@@ -29,12 +29,12 @@
       }
       static public function getByRegions(){
          $result = array();
-         $Regions = ModelsBD::SelectFrom("SELECT R.id, R.nombre, R.latitud AS Lat_, R.longitud AS Long_ FROM `regiones_v2` R WHERE  estatus = 1");
+         $Regions = ModelsBD::SelectFrom("SELECT R.id, R.nombre, R.latitud AS Lat_, R.longitud AS Long_ FROM `regiones` R WHERE  estatus = 1");
          if(!empty($Regions)){
             foreach ($Regions as $Item) {
                extract($Item);
                $Lenguages = ModelsBD::getFilter("SELECT lpm.idlengua, L.nombre, SUM(lpm.nhablantes) as total 
-                                                FROM municipios_v2 M, lengua_por_municipio_v2 lpm, lenguas_v2 L, `regiones_v2` R 
+                                                FROM municipios M, lengua_por_municipio lpm, lenguas L, `regiones` R 
                                                 WHERE M.id = lpm.idmunicipio AND lpm.idlengua = L.id AND  M.region = R.id and M.region = $id
                                                 GROUP BY M.region, lpm.idlengua
                                                 ORDER BY total DESC");
@@ -52,11 +52,11 @@
       }
       static public function getByLenguage($ID){
          // $Items_BD = ModelsBD::SelectFrom("SELECT M.id as Id, M.nombre, L.nombre as Lengua, M.latitud AS Lat_, M.longitud AS Long_ , LM.nhablantes 
-         //                                  FROM `municipios_v2` M, lengua_por_municipio_v2 LM, lenguas_v2 L
+         //                                  FROM `municipios` M, lengua_por_municipio LM, lenguas L
          //                                  WHERE LM.idmunicipio = M.id and LM.idlengua = L.id and LM.idlengua = $ID 
          //                                  ORDER BY M.nombre ASC");
          $Items_BD = ModelsBD::SelectFrom("SELECT M.id as Id, M.nombre as title, L.nombre as Lengua, M.latitud AS Lat_, M.longitud AS Long_ , LM.nhablantes 
-                                          FROM `municipios_v2` M, lengua_por_municipio_v2 LM, lenguas_v2 L
+                                          FROM `municipios` M, lengua_por_municipio LM, lenguas L
                                           WHERE LM.idmunicipio = M.id and LM.idlengua = L.id and LM.idlengua = $ID 
                                           ORDER BY M.nombre ASC");
          $return = new response();

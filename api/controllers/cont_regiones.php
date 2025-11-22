@@ -5,7 +5,7 @@
    class regiones{
 
       static public function getData($table, $id){
-         $Items_BD = ModelsBD::SelectFrom("SELECT * FROM `regiones_v2`");
+         $Items_BD = ModelsBD::SelectFrom("SELECT * FROM `regiones`");
          return self::getResponse($Items_BD);
       }
 

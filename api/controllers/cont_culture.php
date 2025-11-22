@@ -12,7 +12,7 @@
       }
       static public function getData(){
          $Items_BD = ModelsBD::SelectFrom("SELECT CM.Id, M.nombre AS title, M.latitud AS Lat_, M.longitud AS Long_, CM.PPA
-                                          FROM `cultura_por_municipio_v2` CM, `municipios_v2` M
+                                          FROM `cultura_por_municipio` CM, `municipios` M
                                           WHERE (CM.Id_Mun = M.id)
                                           ORDER BY M.nombre ASC");
          $return = new response();
@@ -20,7 +20,7 @@
       }
       static public function setFind($ID){
          $Item_BD = ModelsBD::getFind("SELECT CM.Id, M.nombre AS Municipio, R.nombre AS Region, CM.Tradiciones, CM.EIC, CM.CC, CM.Museos, CM.Bibliotecas, CM.Auditorios, CM.CD, CM.PPA
-                                       FROM `cultura_por_municipio_v2` CM, `municipios_v2` M, `regiones_v2` R
+                                       FROM `cultura_por_municipio` CM, `municipios` M, `regiones` R
                                        WHERE (CM.Id_Mun = M.id) AND (M.region = R.id) AND CM.Id = $ID");
          $return = new response();
          if(!empty($Item_BD)){
