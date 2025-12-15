@@ -51,7 +51,7 @@
          $result = array();
 
          $query = "SELECT m.`id`, m.`description` AS `title`, m.`uri`, m.`icon`, m.`color`, m.`team` 
-                  FROM `modules` m 
+                  FROM `   ` m 
                   WHERE m.`map` = 1 AND m.`status` = 1 
                   ORDER BY m.`description` ASC;";
          $Items_BD = ModelsBD::getFilter($query);
